@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rosé Cakery — Handmade Cakes Baked with Love</title>
+  <meta name="description" content="Handmade cakes, cupcakes and sweet treats, baked fresh every day and frosted in pink." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet" />
+  <!-- Phosphor icon font (regular, fill & duotone weights) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/duotone/style.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧁</text></svg>" />
+</head>
+<body>
+
+  <!-- ============ PRELOADER ============ -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="loader-cake">
+      <div class="loader-candle"><span class="flame"></span></div>
+      <div class="loader-tier tier-top"></div>
+      <div class="loader-tier tier-bottom"></div>
+      <div class="loader-plate"></div>
+    </div>
+    <p class="loader-text">Baking something sweet<span>.</span><span>.</span><span>.</span></p>
+  </div>
+
+  <!-- Gooey filter used by the icing drip -->
+  <svg class="sr-only-svg" aria-hidden="true" focusable="false">
+    <defs>
+      <filter id="goo">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur" />
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -10" result="goo" />
+        <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#home" class="logo" aria-label="Rosé Cakery home">
+        <span class="logo-icon"><i class="ph-fill ph-cake"></i></span>
+        <span class="logo-text">Rosé <em>Cakery</em></span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#ingredients">Ingredients</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="cart-btn" id="cartBtn" aria-label="Your cake box">
+          <i class="ph ph-shopping-bag"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <a href="#contact" class="btn btn-primary btn-sm nav-cta">Order Now</a>
+        <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <!-- floating decorations -->
+      <div class="hero-floaters" aria-hidden="true">
+        <span class="floater f1" data-depth="0.6">🍓</span>
+        <span class="floater f2" data-depth="0.3">🧁</span>
+        <span class="floater f3" data-depth="0.8">🍒</span>
+        <span class="floater f4" data-depth="0.4">🍰</span>
+        <span class="floater f5" data-depth="0.7">🍬</span>
+        <span class="floater f6" data-depth="0.5">🌸</span>
+      </div>
+      <div class="sprinkles" id="heroSprinkles" aria-hidden="true"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <span class="eyebrow reveal"><i class="ph-fill ph-sparkle"></i> Freshly baked every morning</span>
+          <h1 class="hero-title">
+            <span class="line"><span class="word">Life is</span></span>
+            <span class="line"><span class="word">sweeter in</span></span>
+            <span class="line"><span class="word script">pink</span> <span class="word">cake</span></span>
+          </h1>
+          <p class="hero-sub reveal">Handmade cakes, cupcakes &amp; little treats — baked with real butter, fresh berries and a whole lot of love. Perfect for birthdays, weddings, or just because.</p>
+          <div class="hero-btns reveal">
+            <a href="#menu" class="btn btn-primary">See the Menu <i class="ph ph-arrow-right btn-ico"></i></a>
+            <a href="#contact" class="btn btn-ghost">Custom Cake</a>
+          </div>
+          <div class="hero-mini reveal">
+            <div class="avatars">
+              <img src="https://images.unsplash.com/photo-1563778084459-859099e48677?w=96&h=96&q=70&auto=format&fit=crop" alt="" />
+              <img src="https://images.unsplash.com/photo-1558326567-98ae2405596b?w=96&h=96&q=70&auto=format&fit=crop" alt="" />
+              <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=96&h=96&q=70&auto=format&fit=crop" alt="" />
+            </div>
+            <p><strong>Loved by sweet-tooths</strong><br />all over town</p>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-blob"></div>
+          <svg class="ring-text" viewBox="0 0 300 300" aria-hidden="true">
+            <defs><path id="circlePath" d="M150,150 m-120,0 a120,120 0 1,1 240,0 a120,120 0 1,1 -240,0" /></defs>
+            <text><textPath href="#circlePath">• freshly baked • made with love • frosted in pink • freshly baked • made with love •</textPath></text>
+          </svg>
+          <div class="hero-img-wrap">
+            <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=900&q=80&auto=format&fit=crop" alt="Pink drip cake topped with an ice-cream cone and sprinkles" class="hero-img" />
+          </div>
+          <div class="badge badge-1"><span><i class="ph-fill ph-star"></i></span><div><strong>4.9</strong><small>happy reviews</small></div></div>
+          <div class="badge badge-2"><span><i class="ph-fill ph-cake"></i></span><div><strong>Custom</strong><small>made to order</small></div></div>
+          <div class="badge badge-3"><span><i class="ph-fill ph-truck"></i></span><div><strong>Same day</strong><small>delivery</small></div></div>
+        </div>
+      </div>
+
+      <!-- ===== ICING DRIP (built by script.js) ===== -->
+      <div class="drip" aria-hidden="true">
+        <div class="drip-goo" id="dripGoo"><div class="drip-base"></div></div>
+        <div class="drip-shine" id="dripShine"><div class="base-shine"></div></div>
+        <div class="drip-drops" id="dripDrops"></div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="features">
+      <div class="container features-grid">
+        <div class="feature reveal">
+          <div class="feature-ico"><i class="ph-duotone ph-leaf"></i></div>
+          <div><h3>Real ingredients</h3><p>Butter, eggs, fresh fruit. No shortcuts, no mixes.</p></div>
+        </div>
+        <div class="feature reveal" style="--d:.1s">
+          <div class="feature-ico"><i class="ph-duotone ph-palette"></i></div>
+          <div><h3>Your design</h3><p>Tell us your dream cake and we'll bring it to life.</p></div>
+        </div>
+        <div class="feature reveal" style="--d:.2s">
+          <div class="feature-ico"><i class="ph-duotone ph-hand-heart"></i></div>
+          <div><h3>Baked with love</h3><p>Every cake is handmade in small batches.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Birthday Cakes</span><i class="ph-fill ph-sparkle"></i><span>Wedding Cakes</span><i class="ph-fill ph-heart"></i><span>Cupcakes</span><i class="ph-fill ph-sparkle"></i><span>Macarons</span><i class="ph-fill ph-cake"></i><span>Cheesecakes</span><i class="ph-fill ph-sparkle"></i><span>Drip Cakes</span><i class="ph-fill ph-heart"></i>
+        <span>Birthday Cakes</span><i class="ph-fill ph-sparkle"></i><span>Wedding Cakes</span><i class="ph-fill ph-heart"></i><span>Cupcakes</span><i class="ph-fill ph-sparkle"></i><span>Macarons</span><i class="ph-fill ph-cake"></i><span>Cheesecakes</span><i class="ph-fill ph-sparkle"></i><span>Drip Cakes</span><i class="ph-fill ph-heart"></i>
+      </div>
+    </div>
+
+    <!-- ============ MENU ============ -->
+    <section class="menu section" id="menu">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Our sweet menu</span>
+          <h2>Take a look at <span class="script">these</span> treats</h2>
+          <p>Pick a favourite, or mix &amp; match a box of goodies.</p>
+        </div>
+
+        <div class="tabs reveal" role="tablist">
+          <button class="tab active" data-filter="all" role="tab">All</button>
+          <button class="tab" data-filter="cakes" role="tab">Cakes</button>
+          <button class="tab" data-filter="cupcakes" role="tab">Cupcakes</button>
+          <button class="tab" data-filter="treats" role="tab">Treats</button>
+          <span class="tab-pill" id="tabPill"></span>
+        </div>
+
+        <!-- Prices are placeholders — change them to the real ones -->
+        <div class="menu-grid" id="menuGrid">
+          <article class="card reveal" data-cat="cakes">
+            <div class="card-img"><img loading="lazy" src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=75&auto=format&fit=crop" alt="Slice of raspberry layer cake" /><span class="tag">Bestseller</span></div>
+            <div class="card-body">
+              <h3>Raspberry Dream</h3>
+              <p>Fluffy vanilla sponge layered with raspberry cream and fresh berries.</p>
+              <div class="card-foot"><span class="price">$45</span><button class="add-btn" data-name="Raspberry Dream">Add to box</button></div>
+            </div>
+          </article>
+
+          <article class="card reveal" data-cat="cakes">
+            <div class="card-img"><img loading="lazy" src="https://images.unsplash.com/photo-1611293388250-580b08c4a145?w=600&q=75&auto=format&fit=crop" alt="Strawberry fraisier cake with pink glaze" /></div>
+            <div class="card-body">
+              <h3>Strawberry Fraisier</h3>
+              <p>Silky mousseline, whole strawberries and a shiny pink mirror glaze.</p>
+              <div class="card-foot"><span class="price">$52</span><button class="add-btn" data-name="Strawberry Fraisier">Add to box</button></div>
+            </div>
+          </article>
+
+          <article class="card reveal" data-cat="cakes">
+            <div class="card-img"><img loading="lazy" src="https://images.unsplash.com/photo-1616541823729-00fe0aacd32c?w=600&q=75&auto=format&fit=crop" alt="Slice of red velvet cake with cream cheese frosting" /><span class="tag">Classic</span></div>
+            <div class="card-body">
+              <h3>Red Velvet Bliss</h3>
+              <p>Soft cocoa-kissed layers with tangy cream cheese frosting.</p>
+              <div class="card-foot"><span class="price">$48</span><button class="add-btn" data-name="Red Velvet Bliss">Add to box</button></div>
+            </div>
+          </article>
+
+          <article class="card reveal" data-cat="cakes">
+            <div class="card-img"><img loading="lazy" src="https://images.unsplash.com/photo-1562777717-dc6984f65a63?w=600&q=75&auto=format&fit=crop" alt="Lavender cake decorated with buttercream flowers" /><span class="tag">New</span></div>
+            <div class="card-body">
+              <h3>Blossom Garden</h3>
+              <p>Lavender buttercream piped into a bouquet of sugar flowers.</p>
+              <div class="card-foot"><span class="price">$65</span><button class="add-btn" data-name="Blossom Garden">Add to box</button></div>
+            </div>
+          </article>
+
+          <article class="card reveal" data-cat="cakes">
+            <div class="card-img"><img loading="lazy" src="https://images.unsplash.com/photo-1622621746668-59fb299bc4d7?w=600&q=75&auto=format&fit=crop" alt="Strawberry cheesecake topped with fresh strawberries" /></div>
+            <div class="card-body">
+              <h3>Strawberry Cheesecake</h3>
+              <p>Creamy baked cheesecake on a buttery biscuit base.</p>
+              <div class="card-foot"><span class="price">$40</span><button class="add-btn" data-name="Strawberry Cheesecake">Add to box</button></div>
+            </div>
+          </article>
+
+          <article class="card reveal" data-cat="cupcakes">
+            <div class="card-img"><img loading="lazy" src="https://images.unsplash.com/photo-1563778084459-859099e48677?w=600&q=75&auto=format&fit=crop" alt="Cupcakes with pink frosting and chocolate-dipped strawberries" /><span class="tag">Bestseller</span></div>
+            <div class="card-body">
+              <h3>Strawberry Kiss Cupcakes</h3>
+              <p>Box of 6 — pink swirls topped with chocolate-dipped berries.</p>
+              <div class="card-foot"><span class="price">$24</span><button class="add-btn" data-name="Strawberry Kiss Cupcakes">Add to box</button></div>
+            </div>
+          </article>
+
+          <article class="card reveal" data-cat="cupcakes">
+            <div class="card-img"><img loading="lazy" src="https://images.unsplash.com/photo-1607478900766-efe13248b125?w=600&q=75&auto=format&fit=crop" alt="Cupcake with tall pink and white swirl frosting" /></div>
+            <div class="card-body">
+              <h3>Cotton Candy Swirl</h3>
+              <p>Box of 6 — vanilla cupcakes with a tall pastel buttercream swirl.</p>
+              <div class="card-foot"><span class="price">$22</span><button class="add-btn" data-name="Cotton Candy Swirl">Add to box</button></div>
+            </div>
+          </article>
+
+          <article class="card reveal" data-cat="cupcakes">
+            <div class="card-img"><img loading="lazy" src="https://images.unsplash.com/photo-1599785209707-a456fc1337bb?w=600&q=75&auto=format&fit=crop" alt="Vanilla cupcake with pink frosting and a cherry" /></div>
+            <div class="card-body">
+              <h3>Cherry on Top</h3>
+              <p>Box of 6 — classic vanilla with pink frosting and a cherry.</p>
+              <div class="card-foot"><span class="price">$20</span><button class="add-btn" data-name="Cherry on Top">Add to box</button></div>
+            </div>
+          </article>
+
+          <article class="card reveal" data-cat="treats">
+            <div class="card-img"><img loading="lazy" src="https://images.unsplash.com/photo-1558326567-98ae2405596b?w=600&q=75&auto=format&fit=crop" alt="Stack of colourful French macarons" /><span class="tag">Gift idea</span></div>
+            <div class="card-body">
+              <h3>French Macarons</h3>
+              <p>Box of 12 — strawberry, pistachio, lemon and vanilla.</p>
+              <div class="card-foot"><span class="price">$28</span><button class="add-btn" data-name="French Macarons">Add to box</button></div>
+            </div>
+          </article>
+
+          <article class="card reveal" data-cat="treats">
+            <div class="card-img"><img loading="lazy" src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&q=75&auto=format&fit=crop" alt="Strawberry panna cotta in glass jars" /></div>
+            <div class="card-body">
+              <h3>Strawberry Panna Cotta</h3>
+              <p>Set of 4 jars — silky vanilla cream with fresh strawberries.</p>
+              <div class="card-foot"><span class="price">$18</span><button class="add-btn" data-name="Strawberry Panna Cotta">Add to box</button></div>
+            </div>
+          </article>
+
+          <article class="card reveal" data-cat="treats">
+            <div class="card-img"><img loading="lazy" src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=600&q=75&auto=format&fit=crop" alt="Stack of sprinkle-covered donuts" /></div>
+            <div class="card-body">
+              <h3>Sprinkle Donuts</h3>
+              <p>Box of 6 — glazed, drizzled and covered in rainbow sprinkles.</p>
+              <div class="card-foot"><span class="price">$16</span><button class="add-btn" data-name="Sprinkle Donuts">Add to box</button></div>
+            </div>
+          </article>
+
+          <article class="card reveal" data-cat="cakes">
+            <div class="card-img"><img loading="lazy" src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=600&q=75&auto=format&fit=crop" alt="Three-tier white wedding cake decorated with pink roses" /><span class="tag">Weddings</span></div>
+            <div class="card-body">
+              <h3>Rose Wedding Tier</h3>
+              <p>Three elegant tiers dressed in fresh roses. Priced per tier.</p>
+              <div class="card-foot"><span class="price">from $180</span><button class="add-btn" data-name="Rose Wedding Tier">Add to box</button></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INGREDIENTS ============ -->
+    <section class="ingredients section" id="ingredients">
+      <div class="wave-top" aria-hidden="true">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,64 C240,120 480,0 720,48 C960,96 1200,24 1440,72 L1440,0 L0,0 Z" /></svg>
+      </div>
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">The secret of our cakes</span>
+          <h2>It's all in the <span class="script">ingredients</span></h2>
+          <p>We bake with the good stuff only — simple, natural and full of flavour.</p>
+        </div>
+
+        <div class="orbit-wrap">
+          <div class="orbit-center reveal">
+            <div class="orbit-ring"></div>
+            <img loading="lazy" src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?w=800&q=75&auto=format&fit=crop" alt="Tiered white cake decorated with strawberries and blueberries" />
+          </div>
+          <div class="ing ing-1 reveal"><span><i class="ph-duotone ph-cherries"></i></span><h4>Fresh berries</h4><p>Picked ripe, delivered daily</p></div>
+          <div class="ing ing-2 reveal" style="--d:.1s"><span><i class="ph-duotone ph-grains"></i></span><h4>Fine flour</h4><p>Soft, light &amp; sifted</p></div>
+          <div class="ing ing-3 reveal" style="--d:.2s"><span><i class="ph-duotone ph-egg"></i></span><h4>Free-range eggs</h4><p>For a light, fluffy crumb</p></div>
+          <div class="ing ing-4 reveal" style="--d:.3s"><span><i class="ph-duotone ph-cookie"></i></span><h4>Fine chocolate</h4><p>Smooth Belgian cocoa</p></div>
+          <div class="ing ing-5 reveal" style="--d:.4s"><span><i class="ph-duotone ph-drop"></i></span><h4>Fresh cream</h4><p>Whipped by hand</p></div>
+          <div class="ing ing-6 reveal" style="--d:.5s"><span><i class="ph-duotone ph-flower"></i></span><h4>Pure vanilla</h4><p>Real Madagascar beans</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <!-- Numbers are placeholders — swap in the real ones -->
+    <section class="stats">
+      <div class="container stats-grid">
+        <div class="stat reveal"><i class="stat-ico ph-duotone ph-cake"></i><strong class="counter" data-target="2500">0</strong><span class="plus">+</span><p>Cakes baked</p></div>
+        <div class="stat reveal" style="--d:.1s"><i class="stat-ico ph-duotone ph-heart"></i><strong class="counter" data-target="1200">0</strong><span class="plus">+</span><p>Happy customers</p></div>
+        <div class="stat reveal" style="--d:.2s"><i class="stat-ico ph-duotone ph-ice-cream"></i><strong class="counter" data-target="35">0</strong><span class="plus">+</span><p>Flavours</p></div>
+        <div class="stat reveal" style="--d:.3s"><i class="stat-ico ph-duotone ph-champagne"></i><strong class="counter" data-target="150">0</strong><span class="plus">+</span><p>Weddings</p></div>
+      </div>
+    </section>
+
+    <!-- ============ HOW TO ORDER ============ -->
+    <section class="steps section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Easy as pie</span>
+          <h2>How to get your <span class="script">cake</span></h2>
+        </div>
+        <div class="steps-grid">
+          <div class="step reveal"><div class="step-num">1</div><div class="step-ico"><i class="ph-duotone ph-clipboard-text"></i></div><h3>Choose</h3><p>Pick from the menu or describe your dream design.</p></div>
+          <div class="step reveal" style="--d:.15s"><div class="step-num">2</div><div class="step-ico"><i class="ph-duotone ph-palette"></i></div><h3>Customise</h3><p>Flavour, size, colours, toppers and a sweet message.</p></div>
+          <div class="step reveal" style="--d:.3s"><div class="step-num">3</div><div class="step-ico"><i class="ph-duotone ph-chef-hat"></i></div><h3>We bake</h3><p>Freshly made by hand, just for you.</p></div>
+          <div class="step reveal" style="--d:.45s"><div class="step-num">4</div><div class="step-ico"><i class="ph-duotone ph-gift"></i></div><h3>Enjoy!</h3><p>Pick it up or get it delivered to your door.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALLERY ============ -->
+    <section class="gallery section" id="gallery">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Fresh from the oven</span>
+          <h2>Our <span class="script">sweet</span> gallery</h2>
+        </div>
+        <div class="gallery-grid">
+          <figure class="g-item g-tall reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=700&q=75&auto=format&fit=crop" alt="Wedding cake with pink roses" /><figcaption>Rose Wedding</figcaption></figure>
+          <figure class="g-item reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1558326567-98ae2405596b?w=600&q=75&auto=format&fit=crop" alt="French macarons" /><figcaption>Macarons</figcaption></figure>
+          <figure class="g-item reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1607478900766-efe13248b125?w=600&q=75&auto=format&fit=crop" alt="Pink swirl cupcake" /><figcaption>Swirl Cupcakes</figcaption></figure>
+          <figure class="g-item g-wide reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=900&q=75&auto=format&fit=crop" alt="Rainbow layer cake with sprinkles" /><figcaption>Rainbow Surprise</figcaption></figure>
+          <figure class="g-item g-tall reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1562777717-dc6984f65a63?w=700&q=75&auto=format&fit=crop" alt="Floral lavender cake" /><figcaption>Blossom Garden</figcaption></figure>
+          <figure class="g-item reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1559620192-032c4bc4674e?w=600&q=75&auto=format&fit=crop" alt="Cake with blackberries and flowers" /><figcaption>Berry Bloom</figcaption></figure>
+          <figure class="g-item reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=600&q=75&auto=format&fit=crop" alt="Pink cupcakes" /><figcaption>Pink Party Box</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ REVIEWS ============ -->
+    <!-- Sample reviews — replace with real customer reviews before going live -->
+    <section class="reviews section" id="reviews">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Sweet words</span>
+          <h2>What our <span class="script">customers</span> say</h2>
+        </div>
+        <div class="slider reveal">
+          <div class="slides" id="slides">
+            <blockquote class="slide">
+              <div class="stars">★★★★★</div>
+              <p>"The most beautiful birthday cake I've ever seen — and it tasted even better than it looked. Everyone asked where it was from!"</p>
+              <footer><span class="who"><i class="ph-duotone ph-balloon"></i></span><div><strong>Customer name</strong><small>Birthday cake</small></div></footer>
+            </blockquote>
+            <blockquote class="slide">
+              <div class="stars">★★★★★</div>
+              <p>"Our wedding cake was a dream. Soft, not too sweet, and the pink roses matched our flowers perfectly."</p>
+              <footer><span class="who"><i class="ph-duotone ph-champagne"></i></span><div><strong>Customer name</strong><small>Wedding cake</small></div></footer>
+            </blockquote>
+            <blockquote class="slide">
+              <div class="stars">★★★★★</div>
+              <p>"I order the strawberry cupcakes every Friday. They're my little weekend treat and they never disappoint."</p>
+              <footer><span class="who"><i class="ph-duotone ph-cake"></i></span><div><strong>Customer name</strong><small>Cupcakes</small></div></footer>
+            </blockquote>
+          </div>
+          <div class="dots" id="dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT / ORDER ============ -->
+    <section class="contact section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-info reveal">
+          <span class="eyebrow">Let's bake together</span>
+          <h2>Order your <span class="script">dream</span> cake</h2>
+          <p>Tell us about your occasion and we'll get back to you with ideas and a quote. Custom cakes need at least 3 days' notice.</p>
+          <ul class="contact-list">
+            <li><span><i class="ph ph-phone"></i></span> +1 (000) 000-0000</li>
+            <li><span><i class="ph ph-envelope-simple"></i></span> hello@rosecakery.com</li>
+            <li><span><i class="ph ph-map-pin"></i></span> 12 Sugar Lane, Your City</li>
+            <li><span><i class="ph ph-clock"></i></span> Tue–Sun · 8am – 7pm</li>
+          </ul>
+          <div class="contact-cupcake" aria-hidden="true">🧁</div>
+        </div>
+
+        <form class="order-form reveal" id="orderForm" novalidate>
+          <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" placeholder="Jane Doe" required /></div>
+          <div class="field-row">
+            <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" placeholder="Your number" required /></div>
+            <div class="field"><label for="date">Date needed</label><input id="date" name="date" type="date" /></div>
+          </div>
+          <div class="field">
+            <label for="occasion">Occasion</label>
+            <select id="occasion" name="occasion">
+              <option>Birthday</option><option>Wedding</option><option>Baby shower</option><option>Anniversary</option><option>Just because</option>
+            </select>
+          </div>
+          <div class="field"><label for="msg">Tell us about your cake</label><textarea id="msg" name="msg" rows="4" placeholder="Flavour, size, colours, theme…"></textarea></div>
+          <button type="submit" class="btn btn-primary btn-block">Send my order request <i class="ph ph-paper-plane-tilt btn-ico"></i></button>
+          <p class="form-note" id="formNote" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer-drip" aria-hidden="true">
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,0 H1440 V30 C1400,30 1395,70 1370,70 C1345,70 1345,30 1300,30 C1240,30 1240,85 1210,85 C1180,85 1180,30 1120,30 C1060,30 1060,55 1035,55 C1010,55 1010,30 950,30 C890,30 885,80 855,80 C825,80 825,30 760,30 C700,30 700,60 675,60 C650,60 650,30 590,30 C530,30 525,88 495,88 C465,88 465,30 400,30 C340,30 340,58 315,58 C290,58 290,30 230,30 C170,30 170,75 140,75 C110,75 110,30 50,30 C20,30 20,50 0,50 Z" /></svg>
+    </div>
+    <div class="container footer-grid">
+      <div>
+        <a href="#home" class="logo logo-light"><span class="logo-icon"><i class="ph-fill ph-cake"></i></span><span class="logo-text">Rosé <em>Cakery</em></span></a>
+        <p class="footer-about">Handmade cakes baked fresh with love — and always a little bit pink.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a><a href="#" aria-label="TikTok"><i class="ph ph-tiktok-logo"></i></a><a href="#" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a><a href="#" aria-label="WhatsApp"><i class="ph ph-whatsapp-logo"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul><li><a href="#menu">Menu</a></li><li><a href="#ingredients">Ingredients</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#contact">Order</a></li></ul>
+      </div>
+      <div>
+        <h4>Opening hours</h4>
+        <ul><li>Tue – Fri · 8am – 7pm</li><li>Sat – Sun · 9am – 5pm</li><li>Mon · Closed (we're baking!)</li></ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year"></span> Rosé Cakery. Made with <i class="ph-fill ph-heart heart"></i> and buttercream.</p>
+      <p class="credit">Photos from <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a></p>
+    </div>
+  </footer>
+
+  <a href="#home" class="to-top" id="toTop" aria-label="Back to top"><i class="ph ph-arrow-up"></i></a>
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
